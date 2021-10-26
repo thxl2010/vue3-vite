@@ -1,5 +1,8 @@
-<script setup lang="ts">
+<script setup lang="tsx">
 import { ref } from 'vue';
+import TsxComponent from './tsx';
+import DefineComponentTsx from './defineComponent';
+import DefineComponentSetup from './DefineComponentSetup';
 
 const props = defineProps<{ msg: string }>();
 
@@ -11,6 +14,13 @@ const increment = () => {
   count.value++;
   emit('increment', count.value);
 };
+
+const jsxC = (
+  <div>
+    <h2>vite jsx</h2>
+    <p>vite jsx - does not update auto, must to refresh page</p>
+  </div>
+);
 </script>
 
 <template>
@@ -39,6 +49,11 @@ const increment = () => {
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.
   </p>
+
+  <jsxC />
+  <TsxComponent />
+  <DefineComponentTsx />
+  <DefineComponentSetup />
 </template>
 
 <style scoped>
