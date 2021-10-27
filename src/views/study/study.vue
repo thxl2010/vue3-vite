@@ -10,6 +10,13 @@
       <router-link :to="{ name: 'login' }">Login</router-link>
     </li>
   </ul>
+
+  <div>
+    <h1>Vuex@4</h1>
+    <div>
+      <p>user: {{ $store.user.name }}</p>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
