@@ -14,7 +14,7 @@
   <div>
     <h1>Vuex@4</h1>
     <div>
-      <p>user: {{ $store.user.name }}</p>
+      <p>$store.state.user.user_id: {{ $store.state.user?.user_id }}</p>
     </div>
   </div>
 </template>
@@ -23,6 +23,11 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import HelloWorld from '@/components/HelloWorld.vue';
+import { useStore } from 'vuex';
+import { key } from '@/store/';
+
+const store = useStore(key);
+console.log('store returned by useStore in setup :', store);
 </script>
 
 <style>

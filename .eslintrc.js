@@ -17,5 +17,7 @@ module.exports = {
     defineExpose: 'readonly',
     withDefaults: 'readonly',
   },
-  rules: {},
+  rules: {
+    camelcase: ['warn', { properties: 'never' }],
+  },
 };

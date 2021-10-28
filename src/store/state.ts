@@ -1,8 +1,5 @@
 export default () => {
   return {
-    user: {
-      name: '',
-      id: '',
-    },
+    user: JSON.parse(window.localStorage.getItem('user') || 'null'),
   };
 };
