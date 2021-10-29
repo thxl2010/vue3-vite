@@ -9,6 +9,13 @@
     <li>
       <router-link :to="{ name: 'login' }">Login</router-link>
     </li>
+    <li>
+      $route.push({ name: 'home'}):
+      <button @click="$router.push({ name: 'home' })">首页</button>
+    </li>
+    <li>
+      <p>$route.query.name: {{ $route.query.name }}</p>
+    </li>
   </ul>
 
   <div>
@@ -28,6 +35,7 @@ import { key } from '@/store/';
 
 const store = useStore(key);
 console.log('store returned by useStore in setup :', store);
+console.log('store.state.user?.user_id :', store.state.user?.user_id);
 </script>
 
 <style>
