@@ -7,8 +7,20 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
+import { getLoginInfo } from '@/api/common';
+// ! 加载类型 import type
+import type { ILoginInfo } from '@/api/types/common';
+import { onMounted } from '@vue/runtime-core';
 
 const name = ref('');
+const list = ref<ILoginInfo['slide']>([]);
+
+onMounted(() => {
+  getLoginInfo().then((data) => {
+    console.log('login', data);
+    list.value = data.slide;
+  });
+});
 </script>
 
 <style lang="scss" scoped></style>

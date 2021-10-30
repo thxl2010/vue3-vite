@@ -20,4 +20,12 @@ module.exports = {
   rules: {
     camelcase: ['warn', { properties: 'never' }],
   },
+  overrides: [
+    {
+      files: ['src/api/**/*.ts'],
+      rules: {
+        camelcase: 'off',
+      },
+    },
+  ],
 };
