@@ -10,9 +10,10 @@ export default {
       locale: zhCn,
     });
 
-    for (const iconName in ElIcons) {
+    let iconName: keyof typeof ElIcons;
+    for (iconName in ElIcons) {
       if (Object.prototype.hasOwnProperty.call(ElIcons, iconName)) {
-        app.component(iconName, (ElIcons as any)[iconName]);
+        app.component(iconName, ElIcons[iconName]);
       }
     }
   },
