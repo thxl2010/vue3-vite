@@ -44,4 +44,7 @@ onMounted(() => {
 .el-container {
   height: 100vh;
 }
+.el-aside > .el-menu {
+  border-right: none;
+}
 </style>
