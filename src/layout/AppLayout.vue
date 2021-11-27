@@ -4,7 +4,9 @@
       <AppMenu />
     </el-aside>
     <el-container>
-      <el-header>Header {{ name }}</el-header>
+      <el-header>
+        <AppHeader />
+      </el-header>
       <el-main>Main</el-main>
     </el-container>
   </el-container>
@@ -14,6 +16,7 @@
 import { ref } from 'vue';
 import { onMounted } from '@vue/runtime-core';
 import AppMenu from './components/AppMenu.vue';
+import AppHeader from './AppHeader/index.vue';
 
 const name = ref('AppLayout');
 
@@ -22,16 +25,17 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss" scoped></style>
-
-<style>
-.el-header,
-.el-footer {
-  background-color: #b3c0d1;
+<style lang="scss" scoped>
+.el-header {
+  background-color: #fff;
   color: var(--el-text-color-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .el-aside {
+  width: auto;
   background-color: #304156;
   color: var(--el-text-color-primary);
 }

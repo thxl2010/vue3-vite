@@ -17,7 +17,7 @@ const routes: RouteRecordRaw[] = [
         name: 'home',
         component: () => import('../views/home/home.vue'),
         meta: {
-          title: 'home',
+          title: '首页',
         },
       },
       productRoutes,

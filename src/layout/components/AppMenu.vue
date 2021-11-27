@@ -6,6 +6,7 @@
     default-active="2"
     text-color="#fff"
     router
+    :collapse="$store.state.isCollapse"
   >
     <el-menu-item index="/">
       <el-icon><Menu /></el-icon>
@@ -18,8 +19,8 @@
       </template>
       <el-menu-item index="/product/product_list">商品列表</el-menu-item>
       <el-menu-item index="/product/product_classify">商品规则</el-menu-item>
-      <el-menu-item index="/product/product_attr">商品属性</el-menu-item>
-      <el-menu-item index="/product/product_reply">商品</el-menu-item>
+      <el-menu-item index="/product/product_attr">商品规格</el-menu-item>
+      <el-menu-item index="/product/product_reply">商品评论</el-menu-item>
     </el-sub-menu>
     <el-sub-menu index="2">
       <template #title>
@@ -49,4 +50,9 @@
 // import { ref } from 'vue';
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.aside-menu-vertical:not(.el-menu--collapse) {
+  width: 200px;
+  min-height: 400px;
+}
+</style>
