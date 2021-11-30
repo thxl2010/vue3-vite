@@ -17,7 +17,13 @@ export default defineConfig({
       },
     },
   },
-  plugins: [vue(), vueJsx(), eslintPlugin()],
+  plugins: [
+    vue(),
+    vueJsx(),
+    eslintPlugin({
+      cache: false,
+    }),
+  ],
   resolve: {
     alias: {
       '@': _resolve('./src/'),
