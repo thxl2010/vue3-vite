@@ -60,3 +60,10 @@ export const login = (data: ILoginForm) => {
     data,
   });
 };
+
+export const logout = () => {
+  return request({
+    method: 'GET',
+    url: '/setting/admin/logout',
+  });
+};

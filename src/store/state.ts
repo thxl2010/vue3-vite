@@ -1,7 +1,9 @@
 import { IUserInfo /* , IMenu */ } from '@/api/types/common';
+import { getItem } from '@/utils/storage';
+import { USER } from '@/utils/constants';
 
 const state = {
-  user: null as ({ token: string } & IUserInfo) | null,
+  user: getItem<({ token: string } & IUserInfo) | null>(USER),
   isCollapse: false,
 };
 
