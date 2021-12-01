@@ -2,13 +2,13 @@ import { InjectionKey } from 'vue';
 import { createStore, useStore as baseUseStore, Store } from 'vuex';
 import state from './state';
 import mutations from './mutations';
-import { StateInterface } from '@/models/store/state';
+import type { State } from './state';
 
-export const key: InjectionKey<Store<StateInterface>> = Symbol(
+export const key: InjectionKey<Store<State>> = Symbol(
   "Vuex installs the store to the Vue app using Vue's Provide/Inject feature"
 );
 
-export const store = createStore<StateInterface>({
+export const store = createStore<State>({
   state,
   mutations,
 });

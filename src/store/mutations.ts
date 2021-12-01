@@ -1,14 +1,11 @@
-import { SET_USER_INFO, SET_IS_COLLAPSE } from './types';
-import { StateInterface } from '@/models/store/State';
+import { SET_USER, SET_IS_COLLAPSE } from './types';
+import type { State } from './state';
 
 export default {
-  [SET_USER_INFO](state: StateInterface, user: StateInterface['user']) {
+  [SET_USER](state: State, user: State['user']) {
     state.user = user;
   },
-  [SET_IS_COLLAPSE](
-    state: StateInterface,
-    isCollapse: StateInterface['isCollapse']
-  ) {
+  [SET_IS_COLLAPSE](state: State, isCollapse: State['isCollapse']) {
     state.isCollapse = isCollapse;
   },
 };

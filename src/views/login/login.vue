@@ -14,14 +14,14 @@
       <el-form-item prop="account">
         <el-input v-model="user.account" placeholder="请输入用户名">
           <template #prefix>
-            <i class="el-input__icon el-icon-user" />
+            <el-icon class="el-input__icon"><User /></el-icon>
           </template>
         </el-input>
       </el-form-item>
       <el-form-item prop="pwd">
         <el-input v-model="user.pwd" type="password" placeholder="请输入密码">
           <template #prefix>
-            <i class="el-input__icon el-icon-lock" />
+            <el-icon class="el-input__icon"><lock /></el-icon>
           </template>
         </el-input>
       </el-form-item>
@@ -29,7 +29,7 @@
         <div class="imgcode-wrap">
           <el-input v-model="user.imgcode" placeholder="请输入验证码">
             <template #prefix>
-              <i class="el-input__icon el-icon-key" />
+              <el-icon class="el-input__icon"><key /></el-icon>
             </template>
           </el-input>
           <img
@@ -56,15 +56,23 @@
 
 <script lang="ts" setup>
 import { ref, reactive, onMounted } from 'vue';
-import { getCaptcha /*, login */ } from '@/api/common';
+import { getCaptcha, login } from '@/api/common';
+import { ElMessage } from 'element-plus';
+import { store } from '@/store';
+import { SET_USER } from '@/store/types';
+import { useRouter, useRoute } from 'vue-router';
+import type { IElForm, IFormRule } from '@/types/element-plus';
 
+const route = useRoute();
+const router = useRouter();
+const form = ref<IElForm | null>(null);
 const user = reactive({
   account: '',
   pwd: '',
   imgcode: '',
 });
 const loading = ref(false);
-const rules = ref({
+const rules = ref<IFormRule>({
   account: [
     {
       required: true,
@@ -98,8 +106,38 @@ const loadCaptcha = async () => {
   captchaSrc.value = URL.createObjectURL(data);
 };
 
-const handleSubmit = () => {
+const handleSubmit = async () => {
   console.log('handleSubmit');
+  const valid = await form.value?.validate();
+  if (!valid) {
+    return;
+  }
+
+  loading.value = true;
+  try {
+    const data = await login(user);
+    if (!data) {
+      return;
+    }
+
+    ElMessage.success('登录成功');
+
+    // 存储登录用户信息
+    store.commit(SET_USER, {
+      ...data.user_info,
+      token: data.token,
+    });
+
+    // 跳转回原来页面
+    let redirect = route.query.redirect || '/';
+    if (typeof redirect !== 'string') {
+      redirect = '/';
+    }
+    router.replace(redirect);
+  } catch (err) {
+    loadCaptcha();
+  }
+  loading.value = false;
 };
 </script>
 
