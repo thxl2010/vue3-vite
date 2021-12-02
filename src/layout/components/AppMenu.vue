@@ -35,8 +35,8 @@
         <el-icon><turn-off /></el-icon>
         <span>权限</span>
       </template>
-      <el-menu-item index="/permission/role">角色</el-menu-item>
       <el-menu-item index="/permission/admin">管理员</el-menu-item>
+      <el-menu-item index="/permission/role">角色</el-menu-item>
       <el-menu-item index="/permission/rule">规则</el-menu-item>
     </el-sub-menu>
     <el-menu-item index="/media">
