@@ -19,6 +19,7 @@ module.exports = {
   },
   rules: {
     camelcase: ['warn', { properties: 'never' }],
+    'vue/no-mutating-props': 'warn',
   },
   overrides: [
     {

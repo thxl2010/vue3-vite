@@ -59,9 +59,9 @@
       <template #header>
         <el-button
           type="primary"
-          icon="el-icon-plus"
-          @click="$router.push('/admin/product/add_product')"
+          @click="$router.push({ name: 'add_product' })"
         >
+          <el-icon><plus /></el-icon>
           添加商品
         </el-button>
         <el-button
@@ -76,11 +76,8 @@
         >
           批量下架
         </el-button>
-        <el-button
-          icon="el-icon-document"
-          :loading="exportExcelLoading"
-          @click="handleExportExcel"
-        >
+        <el-button :loading="exportExcelLoading" @click="handleExportExcel">
+          <el-icon><document /></el-icon>
           导出表格
         </el-button>
       </template>
