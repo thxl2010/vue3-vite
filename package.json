@@ -16,7 +16,9 @@
     "nprogress": "^0.2.0",
     "vue": "^3.2.20",
     "vue-router": "^4.0.12",
-    "vuex": "^4.0.2"
+    "vuex": "^4.0.2",
+    "vxe-table": "^4.1.15-beta.3",
+    "xe-utils": "^3.4.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.2.1",
