@@ -15,16 +15,8 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
-import { onMounted } from '@vue/runtime-core';
 import AppMenu from './components/AppMenu.vue';
 import AppHeader from './AppHeader/index.vue';
-
-const name = ref('AppLayout');
-
-onMounted(() => {
-  console.log('name :', name.value);
-});
 </script>
 
 <style lang="scss" scoped>
