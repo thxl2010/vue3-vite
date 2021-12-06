@@ -54,9 +54,3 @@ onUnmounted(() => {
   sortable.value?.destroy();
 });
 </script>
-
-<style lang="scss" scoped>
-:deep(.el-tag) {
-  margin-right: 5px;
-}
-</style>

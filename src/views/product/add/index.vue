@@ -177,6 +177,7 @@
               :options="{
                 animation: 300,
               }"
+              class="app-draggable"
             >
               <el-tag
                 v-for="item in activities"
@@ -428,6 +429,12 @@ export default {
   max-width: 100%;
   .el-space__item {
     max-width: 100%;
+  }
+}
+.app-draggable {
+  .el-tag {
+    margin-right: 5px;
+    cursor: move;
   }
 }
 </style>
