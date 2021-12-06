@@ -19,6 +19,7 @@ request.interceptors.request.use(
 
     const { user } = store.state;
     if (user && user.token) {
+      config.headers = config.headers || {};
       config.headers.Authorization = `Bearer ${user.token}`;
     }
     return config;
