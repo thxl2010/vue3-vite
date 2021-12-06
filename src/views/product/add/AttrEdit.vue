@@ -12,7 +12,7 @@
         :label="item.value"
       >
         <template #label>
-          <i class="el-icon-menu" />
+          <el-icon class="el-icon-menu"><Menu /></el-icon>
         </template>
         <div>
           <el-tag
@@ -151,6 +151,7 @@ const handleAddAttr = async () => {
 }
 .detail-item {
   margin-right: 10px;
+  cursor: move;
 }
 
 .el-form-item {
