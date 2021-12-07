@@ -3,7 +3,7 @@
     <app-draggable
       v-model="props.modelValue"
       :options="{
-        handle: '.el-icon-menu',
+        handle: '.draggable-label',
       }"
     >
       <el-form-item
@@ -12,7 +12,7 @@
         :label="item.value"
       >
         <template #label>
-          <el-icon class="el-icon-menu"><Menu /></el-icon>
+          <el-icon class="draggable-label"><Menu /></el-icon>
         </template>
         <div>
           <el-tag
@@ -51,7 +51,7 @@
             size="small"
             @click="showInput(item)"
           >
-            + New Tag
+            + 添加标签
           </el-button>
         </div>
       </el-form-item>
@@ -145,7 +145,7 @@ const handleAddAttr = async () => {
 </script>
 
 <style lang="scss" scoped>
-.el-icon-menu {
+.draggable-label {
   font-size: 20px;
   cursor: move;
 }
