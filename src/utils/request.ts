@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import { ElMessage, ElMessageBox } from 'element-plus';
 import { store } from '@/store/index';
-import { useRouter } from 'vue-router';
+import router from '@/router/index';
 import { SET_USER } from '@/store/types';
 
 const request = axios.create({
@@ -9,7 +9,6 @@ const request = axios.create({
 });
 
 let isRefreshing = false;
-const router = useRouter();
 
 // 请求拦截器
 request.interceptors.request.use(
