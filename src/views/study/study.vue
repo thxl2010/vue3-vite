@@ -21,7 +21,7 @@
   <div>
     <h1>Vuex@4</h1>
     <div>
-      <p>$store.state.user.user_id: {{ $store.state.user?.user_id }}</p>
+      <p>$store.state.user.id: {{ $store.state.user?.id }}</p>
     </div>
   </div>
 </template>
@@ -35,7 +35,7 @@ import { key } from '@/store/';
 
 const store = useStore(key);
 console.log('store returned by useStore in setup :', store);
-console.log('store.state.user?.user_id :', store.state.user?.user_id);
+console.log('store.state.user?.id :', store.state.user?.id);
 </script>
 
 <style>
