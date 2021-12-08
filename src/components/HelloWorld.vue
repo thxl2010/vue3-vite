@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import TsxComponent from './tsx';
 import DefineComponentTsx from './defineComponent';
-import DefineComponentSetup from './DefineComponentSetup';
+import DefineComponentSetup from './defineComponentSetup';
 
 const props = defineProps<{ msg: string }>();
 
