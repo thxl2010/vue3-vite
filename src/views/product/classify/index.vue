@@ -79,6 +79,13 @@
           </template>
         </vxe-column>
       </vxe-table>
+      <app-pagination
+        v-model:page="formData.page"
+        v-model:limit="formData.limit"
+        :list-count="total"
+        :load-list="loadList"
+        :disabled="listLoading"
+      />
     </app-card>
   </page-container>
 
