@@ -59,7 +59,11 @@
       <template #header>
         <el-button
           type="primary"
-          @click="$router.push({ name: 'add_product' })"
+          @click="
+            () => {
+              $router.push({ name: 'add_product' });
+            }
+          "
         >
           <el-icon><plus /></el-icon>
           添加商品
