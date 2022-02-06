@@ -2,10 +2,11 @@ import request from '@/utils/request';
 import type {
   IListForm,
   IReply,
-  // IDeleteAttrsParams,
-  // IAttrTplForm,
   IVirtualReply,
+  IProductListForm,
+  IProduct,
 } from '@/api/types/product-reply';
+import { IFormData } from './types/form';
 
 /**
  * 商品评论列表
@@ -59,5 +60,29 @@ export const addVirtualReply = (data: IVirtualReply) => {
     method: 'POST',
     url: `/product/reply/save_fictitious_reply`,
     data,
+  });
+};
+
+/**
+ * 虚拟评论表单
+ */
+export const getVirtualReplyForm = () => {
+  return request<IFormData>({
+    method: 'GET',
+    url: `/product/reply/fictitious_reply/0`,
+  });
+};
+
+/**
+ * 选择商品列表
+ */
+export const getProductList = (data: IProductListForm) => {
+  return request<{
+    count: number;
+    list: IProduct[];
+  }>({
+    method: 'GET',
+    url: `/product/product/list`,
+    params: data,
   });
 };

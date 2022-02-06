@@ -10,8 +10,8 @@ export interface IFormRule {
   field: string;
   props?: Record<string, any>;
   type: string;
-  validate?: FormItemRule[];
   value: string;
+  validate?: FormItemRule[];
   options?: ISelectOptions[];
 }
 
