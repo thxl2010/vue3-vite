@@ -133,7 +133,7 @@ import { ref, onMounted } from 'vue';
 import { ElMessageBox, ElMessage } from 'element-plus';
 import type { IListForm, IReply } from '@/api/types/product-reply';
 import { getReplyList, deleteReply } from '@/api/product-reply';
-import Add from './Add.vue';
+import Add from './add.vue';
 import Reply from './Reply.vue';
 import { formatDate2S } from '@/utils/days';
 
