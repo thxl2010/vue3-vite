@@ -146,6 +146,7 @@ watch(
 .el-table {
   margin-bottom: 1em;
 }
+// ::v-deep usage as a combinator has been deprecated. Use :deep(<inner-selector>) instead.
 ::v-deep .el-image {
   height: 36px;
 }

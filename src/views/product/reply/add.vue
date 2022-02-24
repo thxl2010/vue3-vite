@@ -134,7 +134,10 @@ const handleDialogClosed = () => {
 };
 
 // product
-const handleSelectProduct = (id: IProduct['id'], image: IProduct['image']) => {
+const handleSelectProduct = (
+  id: IProduct['id'] | null,
+  image: IProduct['image']
+) => {
   formData.value.image.product_id = id;
   formData.value.image.image = image;
 };

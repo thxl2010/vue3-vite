@@ -24,8 +24,8 @@ export interface IReply {
 }
 
 export interface ISelectedProduct {
-  image: string; // 商品图
-  product_id: number; // 商品ID
+  image?: string; // 商品图
+  product_id?: number | null; // 商品ID
 }
 
 export interface IVirtualReply {
