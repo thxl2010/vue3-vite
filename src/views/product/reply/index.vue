@@ -134,7 +134,7 @@ import { ElMessageBox, ElMessage } from 'element-plus';
 import type { IListForm, IReply } from '@/api/types/product-reply';
 import { getReplyList, deleteReply } from '@/api/product-reply';
 import Add from './add.vue';
-import Reply from './Reply.vue';
+import Reply from './reply.vue';
 import { formatDate2S } from '@/utils/days';
 
 const TIME_LIST = [
